@@ -31,7 +31,6 @@ set(INTERNAL_SOURCES upstream/src/internal/floatscan.c
                      upstream/src/internal/libc.c)
 '''
 source_folders = []
-'''
 source_folders.append(os.path.join(base_path, r"src\crypt"))
 source_folders.append(os.path.join(base_path, r"src\ctype"))
 source_folders.append(os.path.join(base_path, r"src\env"))
@@ -47,7 +46,6 @@ source_folders.append(os.path.join(base_path, r"src\stdlib"))
 source_folders.append(os.path.join(base_path, r"src\string"))
 source_folders.append(os.path.join(base_path, r"src\time"))
 source_folders.append(os.path.join(base_path, r"src\thread"))
-'''
 source_files = []
 '''不需要遍历子目录
 for folder in source_folders:
@@ -79,6 +77,8 @@ include_foders = []
 include_foders.append(os.path.join(base_path, r"include"))
 include_foders.append(os.path.join(base_path, r"src\internal"))
 include_foders.append(os.path.join(base_path, r"arch\wasm"))
+system_include_foders = []
+system_include_foders.append(os.path.join(base_path, r"include"))
 
 
 '''
@@ -101,4 +101,4 @@ else:
     os.mkdir(destination_foder)
 
 
-wast_builder.compile_wast(source_files, include_foders, destination_foder, 'libc.bc')
+wast_builder.compile_wast(source_files, include_foders, destination_foder, 'libc.bc', system_include_foders)
