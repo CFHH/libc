@@ -1,3 +1,20 @@
+#ifndef _ATOMIC_ARCH_H
+#define _ATOMIC_ARCH_H
+
+#define a_ll a_ll
+static inline int a_ll(volatile int *p)
+{
+   return *p;
+}
+
+#define a_sc a_sc
+static inline int a_sc(volatile int *p, int v)
+{
+   *p = v;
+   return 1;
+}
+
+/*
 #define a_cas a_cas
 static inline int a_cas(volatile int *p, int t, int s)
 {
@@ -24,6 +41,7 @@ static inline int a_swap(volatile int *p, int v)
 		: "=r"(v), "=m"(*p) : "0"(v) : "memory" );
 	return v;
 }
+
 
 #define a_fetch_add a_fetch_add
 static inline int a_fetch_add(volatile int *p, int v)
@@ -121,3 +139,6 @@ static inline int a_clz_64(uint64_t x)
 	__asm__( "bsr %1,%0 ; xor $63,%0" : "=r"(x) : "r"(x) );
 	return x;
 }
+*/
+
+#endif
