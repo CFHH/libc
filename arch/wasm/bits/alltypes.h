@@ -21,7 +21,7 @@ typedef float float_t;
 typedef double double_t;
 #endif
 
-typedef struct { long long __ll; long double __ld; } max_align_t;
+//typedef struct { long long __ll; long double __ld; } max_align_t;
 
 typedef long time_t;
 typedef long suseconds_t;
