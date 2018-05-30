@@ -23,7 +23,7 @@ def compile_wast(source_files, include_foders, destination_foder, output_name, s
     print('destination_foder:', destination_foder)
     print('output_name:', output_name)
     '''
-    compile_cmd_common = 'clang -emit-llvm -O3 --target=wasm32 -ffreestanding -nostdlib -nostdlibinc -fno-threadsafe-statics -fno-rtti -fno-exceptions'
+    compile_cmd_common = 'clang -emit-llvm -Oz --target=wasm32 -ffreestanding -nostdlib -nostdlibinc -fno-threadsafe-statics -fno-rtti -fno-exceptions'
     if nowarnings:
         compile_cmd_common = compile_cmd_common + ' -Wno-everything'
     else:

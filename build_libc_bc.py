@@ -59,11 +59,11 @@ for folder in source_folders:
     for file in files:
         if os.path.splitext(file)[1] == '.c':
             source_files.append(os.path.join(folder, file))
-folder = os.path.join(base_path, r"src\internal")
-source_files.append(os.path.join(folder, 'floatscan.c'))
-source_files.append(os.path.join(folder, 'intscan.c'))
-source_files.append(os.path.join(folder, 'shgetc.c'))
-source_files.append(os.path.join(folder, 'libc.c'))
+
+source_files.append(os.path.join(base_path, r'src\internal\floatscan.c'))
+source_files.append(os.path.join(base_path, r'src\internal\intscan.c'))
+source_files.append(os.path.join(base_path, r'src\internal\shgetc.c'))
+source_files.append(os.path.join(base_path, r'src\internal\libc.c'))
 
 
 '''
