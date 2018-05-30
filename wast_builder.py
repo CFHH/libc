@@ -49,7 +49,7 @@ def compile_wast(source_files, include_foders, destination_foder, output_name, s
             clang_cmd = clang_cmd + ' -D_XOPEN_SOURCE=700'
         else:
             clang_cmd = clang_cmd + ' --std=c++14'
-        clang_cmd = clang_cmd + ' -c ' + file + ' -o' + bcfile
+        clang_cmd = clang_cmd + ' -c ' + file + ' -o ' + bcfile
         returncode = callcmd(clang_cmd)
         if returncode != 0:
             return returncode
